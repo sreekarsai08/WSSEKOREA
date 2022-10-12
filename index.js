@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const mysqlPool = require('./mysqlpool');
+const utils = require('./utils');
 
 //Express middleware
 app.use(express.json());
