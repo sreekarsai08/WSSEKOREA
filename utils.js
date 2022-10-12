@@ -7,8 +7,8 @@ let executeQuery = (mysqlPool,query) => {
                 console.log(`Mysql Error ===> ${JSON.stringify(error)}`);
                 return reject({errorcode:1004,reason:'executeQuery failed'});
             } else {
-                console.log('results ===> ',results[0].count);
-                return resolve(results[0].count);
+                console.log('results ===> ',results[0]);
+                return resolve(results[0]);
             }
         });
     });

@@ -4,28 +4,9 @@ const express = require('express');
 const app = express();
 const mysqlPool = require('./mysqlpool');
 const utils = require('./utils');
-const redis = require('redis');
 
 //Express middleware
 app.use(express.json());
-
-//Get request
-app.get('/competitor', async (req,res) => {
-    try {
-        const url = `redis://10.0.25.102:6379`;
-
-        //Create RedisPoolConnection
-        const redisClient = redis.createClient({url});
-
-        await redisClient.connect();
-
-        let results = await redisClient.get('competitors');
-
-
-    } catch (error) {
-        
-    }
-});
 
 app.post('/competitor', async (req,res) => {
 
